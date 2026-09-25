@@ -1,0 +1,51 @@
+{
+  "name": "dsh-deep-purge",
+  "version": "0.1.0",
+  "description": "彻底删除 DSH 会话：日志目录 + 投影缓存 + 工作区记账 + 引用计数式附件回收，一个确认框搞定。Thorough session purge for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "session",
+    "purge",
+    "delete",
+    "cleanup"
+  ],
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/",
+    "client/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HunLongBaiZe/dsh-deep-purge.git"
+  },
+  "homepage": "https://github.com/HunLongBaiZe/dsh-deep-purge#readme",
+  "bugs": {
+    "url": "https://github.com/HunLongBaiZe/dsh-deep-purge/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

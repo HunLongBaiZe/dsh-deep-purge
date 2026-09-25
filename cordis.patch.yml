@@ -1,0 +1,5 @@
+# dsh-deep-purge bundle layer: inserts the purge plugin row.
+# Row id stays stable so profile patches can target it.
+- insert:
+    - id: deep-purge
+      name: 'dsh-deep-purge'
